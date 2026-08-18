@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Second Office</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+  
+  <!-- ===== NAVIGATION ===== -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-logo">
+            <img src="assets/second.png" alt="Second Office Logo" class="logo-img">
+        </a>
+
+        <div class="navbar-menu" id="navbarMenu">
+        <a href="../index.html">Home</a>
+        <a href="../services.html">Services</a>
+        <a href="../portfolio.html">Work</a>
+        <a href="../packages.html">Packages</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle work hours / after hours mode">
+            <i class="fas fa-sun" id="themeIcon"></i>
+            <span id="themeLabel">WORK HOURS</span>
+          </button>
+        
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      </div>
+   </div>
+</nav>
+
+    <main class="admin-main">
+      <header>
+        <h1>Dashboard</h1>
+        <span id="adminUser">Admin</span>
+      </header>
+
+      <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <div class="search-wrap">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchLeads" placeholder="Search leads..." />
+      </div>
+      <div class="filter-group">
+        <select id="filterStatus">
+          <option value="all">All Status</option>
+          <option value="new">New</option>
+          <option value="contacted">Contacted</option>
+          <option value="discovery">Discovery</option>
+          <option value="proposal">Proposal</option>
+          <option value="won">Won</option>
+          <option value="lost">Lost</option>
+        </select>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="new">New</button>
+        <button class="filter-btn" data-filter="contacted">Contacted</button>
+      </div>
+    </div>
+
+
+      <!-- Stats cards – initially zero -->
+      <div class="stats-grid">
+        <div class="stat-card"><h3>Leads</h3><p id="statLeads">0</p></div>
+        <div class="stat-card"><h3>Inquiries</h3><p id="statInquiries">0</p></div>
+        <div class="stat-card"><h3>Audits</h3><p id="statAudits">0</p></div>
+        <div class="stat-card"><h3>Feedback</h3><p id="statFeedback">0</p></div>
+        <div class="stat-card"><h3>Projects</h3><p id="statProjects">0</p></div>
+      </div>
+
+      <!-- Recent activity – empty state -->
+      <div class="admin-card">
+        <h2>Recent Activity</h2>
+        <div id="recentActivity">
+          <p class="empty-state">No activity yet. As you receive inquiries, audit requests, and feedback, they will appear here.</p>
+        </div>
+      </div>
+    </main>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

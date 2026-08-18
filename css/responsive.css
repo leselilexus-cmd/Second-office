@@ -1,0 +1,67 @@
+/* ============================================================
+   RESPONSIVE BREAKPOINTS (NAVIGATION, LAYOUTS)
+   ============================================================ */
+
+/* ----- Navigation (mobile hamburger) ----- */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: var(--bg);
+    padding: 2rem;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    z-index: 999;
+    gap: 1.5rem;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text);
+  }
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 901px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* ----- General mobile adjustments ----- */
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  .package-grid {
+    grid-template-columns: 1fr;
+  }
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .audit-box .btn-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ----- Small phones ----- */
+@media (max-width: 400px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}

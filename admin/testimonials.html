@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials — Second Office Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+<!-- FILTER BAR -->
+    <div class="filter-bar">
+      <div class="search-wrap">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchLeads" placeholder="Search leads..." />
+      </div>
+      <div class="filter-group">
+        <select id="filterStatus">
+          <option value="all">All Status</option>
+          <option value="new">New</option>
+          <option value="contacted">Contacted</option>
+          <option value="discovery">Discovery</option>
+          <option value="proposal">Proposal</option>
+          <option value="won">Won</option>
+          <option value="lost">Lost</option>
+        </select>
+        <button class="filter-btn active" data-filter="all">All</button>
+      </div>
+    </div>
+
+  <div class="admin-container">
+    <aside class="admin-sidebar"></aside>
+    <main class="admin-main">
+      <header><h1>Public Testimonials</h1></header>
+      <div class="admin-card">
+        <div id="testimonialList">
+          <p class="empty-state">No approved testimonials yet. Once you receive client feedback, review it, and approve it for publication, it will appear here.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

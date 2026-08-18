@@ -1,0 +1,57 @@
+second-office/
+├── index.html
+├── services.html
+├── portfolio.html
+├── about.html
+├── packages.html
+├── contact.html
+├── privacy.html
+├── terms.html
+│
+├── admin/
+│   ├── login.html
+│   ├── dashboard.html
+│   ├── leads.html
+│   ├── inquiries.html
+│   ├── feedback.html
+│   ├── projects.html
+│   └── settings.html
+│
+├── css/
+│   ├── global.css
+│   ├── home.css
+│   ├── components.css
+│   ├── admin.css
+│   └── responsive.css
+│
+├── js/
+│   ├── main.js
+│   ├── navigation.js
+│   ├── animations.js
+│   ├── theme.js
+│   ├── forms.js
+│   ├── analytics.js
+│   └── admin.js
+│
+├── assets/
+│   ├── logo/
+│   ├── icons/
+│   ├── portfolio/
+│   ├── team/
+│   └── images/
+│
+├── backend/
+│   ├── server.js
+│   ├── routes/
+│   │   ├── public.js
+│   │   └── admin.js
+│   ├── controllers/
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   └── rateLimit.js
+│   ├── services/
+│   │   └── supabase.js
+│   └── config/
+│       └── .env
+│
+└── README.md
