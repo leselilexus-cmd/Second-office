@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-07WG5HYLSV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-07WG5HYLSV');
+
+  gtag('event', 'contact_form_submit', {
+    form_type: 'contact'
+});
+
+gtag('event', 'audit_request_submit', {
+    form_type: 'website_audit'
+});
+
+gtag('event', 'whatsapp_click', {
+    form_type: 'contact_section'
+});
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Second Office</title>
+  <meta name="description" content="Contact Second Office for websites, marketing, SEO, branding, and digital solutions." />
+  <link rel="canonical" href="https://secondoffice.co.ls/contact.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .contact-hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--bg) 0%, var(--card-bg) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 50%;
+      height: 80%;
+      background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    .contact-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+    .contact-hero .subhead {
+      font-size: 1.1rem;
+      opacity: 0.7;
+      max-width: 500px;
+    }
+    .contact-form-wrap {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 32px;
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.3s;
+    }
+    .contact-form-wrap:hover {
+      box-shadow: 0 24px 48px var(--glow);
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--card-bg);
+      padding: 0.8rem 1.5rem;
+      border-radius: 60px;
+      border: 1px solid var(--border);
+      transition: all 0.3s;
+    }
+    .contact-info-item:hover {
+      border-color: var(--sky);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px var(--glow);
+    }
+    .contact-info-item i {
+      color: var(--sky);
+      font-size: 1.2rem;
+    }
+    @media (max-width: 600px) {
+      .contact-form-wrap {
+        padding: 1.5rem;
+      }
+      .contact-info-item {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- ===== NAVIGATION ===== -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="navbar-logo">
+      <img src="assets/second.png" alt="Second Office Logo" class="logo-img">
+    </a>
+    <div class="navbar-menu" id="navbarMenu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Work</a>
+      <a href="packages.html">Packages</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+      <button class="theme-toggle" id="themeToggle"><i class="fas fa-sun" id="themeIcon"></i><span id="themeLabel">WORK HOURS</span></button>
+    </div>
+    <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+  </div>
+</nav>
+
+<!-- ===== CONTACT HERO ===== -->
+<section class="contact-hero">
+  <div class="container">
+    <div class="section-label">CONTACT</div>
+    <h1 style="font-size: clamp(2.4rem, 6vw, 4rem);">Let's build your<br />digital future.</h1>
+    <p class="subhead">Fill in the form below and we'll get back to you within one business day.</p>
+
+    <div class="contact-form-wrap" style="max-width:720px; margin:2rem auto 0;">
+      <form id="contactForm">
+        <div class="form-row">
+          <div class="form-group"><label for="contactName">Your name *</label><input type="text" id="contactName" name="name" required placeholder="Full name" /></div>
+          <div class="form-group"><label for="contactBusiness">Business</label><input type="text" id="contactBusiness" name="business" placeholder="Your company" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="contactEmail">Email *</label><input type="email" id="contactEmail" name="email" required placeholder="you@business.com" /></div>
+          <div class="form-group"><label for="contactPhone">Phone</label><input type="tel" id="contactPhone" name="phone" placeholder="+266 1234 5678" /></div>
+        </div>
+        <div class="form-group">
+          <label for="contactService">Service interested in</label>
+          <select id="contactService" name="service">
+            <option value="">Select a service...</option>
+            <option value="Website">Website</option><option value="Marketing">Marketing</option>
+            <option value="SEO">SEO</option><option value="Social Media">Social Media</option>
+            <option value="Branding">Branding</option><option value="Photography">Photography</option>
+            <option value="Content">Content</option><option value="Technology">Technology</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="contactMessage">Message *</label><textarea id="contactMessage" name="message" required placeholder="Tell us about your project..."></textarea></div>
+        <div style="position:absolute; left:-9999px; top:-9999px;"><label for="hp_contact">Leave empty</label><input type="text" id="hp_contact" name="hp_contact" tabindex="-1" autocomplete="off" /></div>
+        <button type="submit" class="btn" style="width:100%; justify-content:center;">Send Message</button>
+        <div id="contactMessageBox" class="form-message" style="display:none;"></div>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <div class="contact-info-item"><i class="fas fa-phone"></i> +266 1234 5678</div>
+      <div class="contact-info-item"><i class="fas fa-envelope"></i> hello@secondoffice.co.ls</div>
+      <div class="contact-info-item"><i class="fab fa-whatsapp"></i> WhatsApp</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4 style="font-size:1.3rem; color:#FFFFFF;">SECOND OFFICE</h4><p style="opacity:0.7;">Your Digital Department</p></div>
+      <div><h4>Services</h4><ul><li>Web</li><li>Marketing</li><li>SEO</li><li>Creative</li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="portfolio.html">Work</a></li><li><a href="packages.html">Packages</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Second Office. All rights reserved.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/26663086459?text=Hello%20Second%20Office" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i><span>Chat</span></a>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script src="js/theme.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/analytics.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

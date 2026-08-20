@@ -1,0 +1,465 @@
+/* ============================================================
+   HOMEPAGE SPECIFIC STYLES
+   ============================================================ */
+
+/* ----- Hero ----- */
+.hero {
+  padding: 5rem 0 6rem;
+  background: var(--bg);
+  transition: background 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-content h1 {
+  margin-bottom: 1rem;
+}
+.hero-content .subhead {
+  margin-bottom: 2rem;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+.hero-badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+  opacity: 0.7;
+}
+.hero-badge span {
+  background: var(--card-bg);
+  padding: 0.3rem 1rem;
+  border-radius: 40px;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+  cursor: default;
+}
+.hero-badge span:hover {
+  border-color: var(--sky);
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--glow);
+}
+.hero-visual {
+  background: radial-gradient(circle at 70% 30%, var(--glow), transparent 70%);
+  min-height: 280px;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--sky);
+  border: 1px solid var(--border);
+  transition: background 0.4s, box-shadow 0.4s;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+body[data-theme="night"] .hero-visual {
+  animation: blueGlow 6s ease-in-out infinite alternate;
+}
+@keyframes blueGlow {
+  0% { box-shadow: 0 0 30px rgba(56, 189, 248, 0.15); }
+  100% { box-shadow: 0 0 70px rgba(56, 189, 248, 0.4); }
+}
+@media (max-width: 800px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    min-height: 180px;
+    font-size: 3rem;
+  }
+}
+
+/* ----- Technology / Trust ----- */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem 1rem;
+  margin-top: 2rem;
+}
+.tech-category {
+  animation: fadeUp 0.6s ease both;
+  animation-delay: calc(var(--i, 0) * 0.1s);
+}
+.tech-category h4 {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+.tech-category ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+.tech-category ul li {
+  background: var(--card-bg);
+  padding: 0.2rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+  transition: all 0.25s;
+  cursor: default;
+}
+.tech-category ul li:hover {
+  border-color: var(--sky);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--glow);
+}
+.third-party-notice {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+/* ============================================================
+   DIGITAL PRESENCE AUDIT — Document Style
+   ============================================================ */
+
+.audit-section {
+  background: var(--bg);
+  transition: background 0.4s;
+}
+
+.audit-intro {
+  max-width: 600px;
+  opacity: 0.7;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ----- Audit Document Card ----- */
+.audit-document {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.3s, background 0.4s;
+}
+.audit-document:hover {
+  box-shadow: 0 24px 48px var(--glow);
+}
+
+/* ----- Document Header ----- */
+.audit-header {
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+.audit-header-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+.audit-header-item {
+  display: flex;
+  flex-direction: column;
+}
+.audit-header-item .audit-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.audit-header-item .audit-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 0.2rem;
+  min-height: 2rem;
+}
+
+/* ----- Section Titles ----- */
+.audit-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+/* ----- Scorecard ----- */
+.audit-scorecard {
+  margin-bottom: 2.5rem;
+}
+.scorecard-table {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.scorecard-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  padding: 0.7rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+}
+.scorecard-row:last-child {
+  border-bottom: none;
+}
+.scorecard-header {
+  background: var(--bg);
+  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.6;
+}
+.scorecard-area {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.scorecard-status {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+.scorecard-score {
+  font-size: 1rem;
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+.scorecard-note {
+  font-size: 0.8rem;
+  opacity: 0.5;
+  margin-top: 0.8rem;
+  font-style: italic;
+}
+
+/* ----- Opportunities ----- */
+.audit-opportunities {
+  margin-bottom: 2.5rem;
+}
+.opportunity-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.opportunity-card:last-of-type {
+  border-bottom: none;
+}
+.opportunity-number {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--sky);
+  min-width: 3rem;
+  opacity: 0.6;
+  line-height: 1.3;
+}
+.opportunity-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  color: var(--text);
+}
+.opportunity-content p {
+  font-size: 0.92rem;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.opportunity-summary {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin-top: 1rem;
+  border-left: 3px solid var(--sky);
+}
+.opportunity-summary p {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  margin-bottom: 0.3rem;
+}
+.opportunity-summary p:last-child {
+  margin-bottom: 0;
+}
+
+/* ----- Recommendation ----- */
+.audit-recommendation {
+  margin-bottom: 2.5rem;
+}
+.recommendation-box {
+  background: var(--bg);
+  border-radius: 12px;
+  padding: 1.5rem 1.8rem;
+  border: 1px solid var(--border);
+}
+.recommendation-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--sky);
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+.recommendation-details p {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+.recommendation-details ul {
+  list-style: none;
+  padding: 0;
+}
+.recommendation-details ul li {
+  padding: 0.3rem 0 0.3rem 1.5rem;
+  position: relative;
+  font-size: 0.92rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.recommendation-details ul li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--sky);
+  font-weight: 700;
+}
+
+/* ----- Request Form ----- */
+.audit-form-section {
+  border-top: 2px solid var(--border);
+  padding-top: 2rem;
+  margin-top: 0.5rem;
+}
+.audit-form-section h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+.audit-form-section p {
+  opacity: 0.6;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+.audit-form {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .audit-document {
+    padding: 1.5rem;
+  }
+  .audit-header-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .scorecard-row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+    padding: 0.6rem 1rem;
+  }
+  .scorecard-header {
+    display: none;
+  }
+  .scorecard-score {
+    text-align: left;
+  }
+  .opportunity-card {
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.8rem 0;
+  }
+  .opportunity-number {
+    font-size: 1.2rem;
+    min-width: auto;
+  }
+  .recommendation-box {
+    padding: 1.2rem;
+  }
+  .recommendation-title {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .audit-document {
+    padding: 1rem;
+  }
+  .audit-header-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  .audit-header-item .audit-value {
+    font-size: 0.95rem;
+  }
+  .scorecard-row {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+  .opportunity-content h4 {
+    font-size: 0.92rem;
+  }
+  .opportunity-content p {
+    font-size: 0.85rem;
+  }
+  .recommendation-details ul li {
+    font-size: 0.85rem;
+    padding-left: 1.2rem;
+  }
+}
+
+/* Night mode adjustments */
+body[data-theme="night"] .audit-document {
+  background: rgba(10, 37, 64, 0.6);
+  border-color: rgba(56, 189, 248, 0.15);
+}
+body[data-theme="night"] .scorecard-header {
+  background: rgba(7, 19, 38, 0.3);
+}
+body[data-theme="night"] .opportunity-summary {
+  background: rgba(7, 19, 38, 0.3);
+}
+body[data-theme="night"] .recommendation-box {
+  background: rgba(7, 19, 38, 0.3);
+}
+
+/* ----- Animations ----- */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

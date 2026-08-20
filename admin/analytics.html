@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-07WG5HYLSV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-07WG5HYLSV');
+
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics — Second Office Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+
+  <div class="admin-container">
+    <aside class="admin-sidebar"></aside>
+    <main class="admin-main">
+      <header><h1>Analytics</h1></header>
+      <div class="admin-card">
+        <p><strong>Google Analytics 4</strong></p>
+        <p>To view real analytics, ensure the GA4 tracking code is installed on the public website. Data will populate as visitors interact with the site.</p>
+        <p style="margin-top:1rem; opacity:0.6;">Currently no analytics data available. Check back after the site receives traffic.</p>
+        <hr style="margin:1.5rem 0; border-color:var(--border);" />
+        <p><strong>Custom Events</strong></p>
+        <ul style="list-style:disc; padding-left:1.5rem; opacity:0.7;">
+          <li><code>contact_submit</code></li>
+          <li><code>audit_request</code></li>
+          <li><code>whatsapp_click</code></li>
+          <li><code>package_select</code></li>
+          <li><code>portfolio_view</code></li>
+          <li><code>feedback_submit</code></li>
+          <li><code>theme_switch</code></li>
+        </ul>
+        <p style="margin-top:1rem; opacity:0.6;">These events will be tracked automatically once the GA4 script is active.</p>
+      </div>
+    </main>
+  </div>
+  <script src="../js/admin.js"></script>
+</body>
+</html>
