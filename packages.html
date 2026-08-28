@@ -2,30 +2,17 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-07WG5HYLSV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-07WG5HYLSV');
-
-  gtag('event', 'contact_form_submit', {
-    form_type: 'contact'
-});
-
-gtag('event', 'audit_request_submit', {
-    form_type: 'website_audit'
-});
-
-gtag('event', 'whatsapp_click', {
-    form_type: 'contact_section'
-});
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-07WG5HYLSV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-07WG5HYLSV');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Packages — Second Office</title>
-  <meta name="description" content="Choose from Starter Lite, Starter Office, Growth Office, and Pro Office packages. Flexible pricing for every business." />
+  <title>Packages & Pricing — Second Office</title>
+  <meta name="description" content="Full pricing catalog for Second Office services including websites, marketing, social media, branding, photography, and content creation." />
   <link rel="canonical" href="https://secondoffice.co.ls/packages.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,69 +21,1016 @@ gtag('event', 'whatsapp_click', {
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+
+  <style>
+    /* ============================================================
+       PACKAGES PAGE – TABLE STYLES
+       ============================================================ */
+    .pricing-section {
+      padding: 3rem 0 2rem;
+    }
+
+    .pricing-section .section-label {
+      margin-bottom: 0.2rem;
+    }
+
+    .pricing-section h2 {
+      margin-bottom: 0.3rem;
+    }
+
+    .pricing-section .subtitle {
+      max-width: 640px;
+      opacity: 0.7;
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* Category title with icon */
+    .category-title {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    .category-title i {
+      color: var(--sky);
+      font-size: 1.5rem;
+      width: 2rem;
+      text-align: center;
+    }
+
+    /* Table wrapper – scrollable on small screens */
+    .table-wrap {
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.3s;
+    }
+    .table-wrap:hover {
+      box-shadow: 0 12px 30px var(--glow);
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 600px;
+    }
+
+    .pricing-table thead {
+      background: var(--bg);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .pricing-table th {
+      text-align: left;
+      padding: 0.9rem 1rem;
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.6;
+      color: var(--text);
+    }
+
+    .pricing-table td {
+      padding: 0.8rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: middle;
+    }
+
+    .pricing-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .pricing-table tbody tr:hover {
+      background: rgba(56, 189, 248, 0.04);
+    }
+
+    /* Service name column */
+    .pricing-table .service-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Description column */
+    .pricing-table .service-desc {
+      opacity: 0.7;
+      font-size: 0.88rem;
+    }
+
+    /* Price column – sky blue accent */
+    .pricing-table .service-price {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--sky);
+      white-space: nowrap;
+      font-size: 1rem;
+    }
+
+    /* Delivery column */
+    .pricing-table .service-delivery {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      white-space: nowrap;
+    }
+
+    /* Add‑on rows – slightly smaller and indented */
+    .pricing-table .addon-row td:first-child {
+      padding-left: 2rem;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+    .pricing-table .addon-row .service-name {
+      font-weight: 400;
+      opacity: 0.8;
+    }
+    .pricing-table .addon-row .service-price {
+      font-weight: 600;
+      color: var(--text);
+      opacity: 0.8;
+    }
+
+    .pricing-table .sub-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.4;
+      font-weight: 600;
+    }
+
+    /* Note / disclaimer under tables */
+    .table-note {
+      font-size: 0.8rem;
+      opacity: 0.5;
+      margin-top: -0.8rem;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    /* WhatsApp CTA row at bottom */
+    .packages-cta {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    .packages-cta:hover {
+      box-shadow: 0 12px 30px var(--glow);
+    }
+    .packages-cta h3 {
+      margin-bottom: 0.5rem;
+    }
+    .packages-cta p {
+      opacity: 0.7;
+      margin-bottom: 1.2rem;
+    }
+    .packages-cta .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 768px) {
+      .pricing-table {
+        font-size: 0.82rem;
+        min-width: 480px;
+      }
+      .pricing-table th,
+      .pricing-table td {
+        padding: 0.6rem 0.8rem;
+      }
+      .pricing-table .service-desc {
+        font-size: 0.8rem;
+      }
+      .category-title {
+        font-size: 1.2rem;
+      }
+      .packages-cta {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .pricing-table {
+        font-size: 0.75rem;
+        min-width: 360px;
+      }
+      .pricing-table th,
+      .pricing-table td {
+        padding: 0.4rem 0.5rem;
+      }
+      .pricing-table .service-price {
+        font-size: 0.85rem;
+      }
+      .category-title {
+        font-size: 1rem;
+      }
+      .packages-cta .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* Night mode overrides */
+    body[data-theme="night"] .table-wrap {
+      background: rgba(10, 37, 64, 0.5);
+      border-color: rgba(56, 189, 248, 0.12);
+    }
+    body[data-theme="night"] .pricing-table thead {
+      background: rgba(7, 19, 38, 0.4);
+    }
+    body[data-theme="night"] .pricing-table tbody tr:hover {
+      background: rgba(56, 189, 248, 0.06);
+    }
+    body[data-theme="night"] .packages-cta {
+      background: rgba(10, 37, 64, 0.5);
+    }
+  </style>
 </head>
 <body>
+
 <!-- ===== NAVIGATION ===== -->
 <nav class="navbar">
   <div class="container">
     <a href="index.html" class="navbar-logo">
-            <img src="assets/second.png" alt="Second Office Logo" class="logo-img">
-        </a>
-
-        <div class="navbar-menu" id="navbarMenu">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Work</a>
-        <a href="packages.html">Packages</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        
-          <button class="theme-toggle" id="themeToggle" aria-label="Toggle work hours / after hours mode">
-            <i class="fas fa-sun" id="themeIcon"></i>
-            <span id="themeLabel">WORK HOURS</span>
-          </button>
-        
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-        <i class="fas fa-bars"></i>
+      <img src="assets/second.png" alt="Second Office Logo" class="logo-img">
+    </a>
+    <div class="navbar-menu" id="navbarMenu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Work</a>
+      <a href="packages.html" class="active">Packages</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle work hours / after hours mode">
+        <i class="fas fa-sun" id="themeIcon"></i>
+        <span id="themeLabel">WORK HOURS</span>
       </button>
-      </div>
-   </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
 </nav>
 
-  <section style="padding:4rem 0;">
-    <div class="container">
-      <div class="section-label">PRICING</div>
-      <h2>Choose your package</h2>
-      <p style="max-width:600px; opacity:0.7;">Flexible options for businesses at every stage. All packages include setup and monthly support.</p>
-      <div class="package-grid" style="margin-top:2.5rem;">
-        <div class="package-card"><h3>STARTER LITE</h3><div class="price">$299</div><p style="opacity:0.6; font-size:0.9rem;">Setup + Monthly</p><ul><li>✓ Core website</li><li>✓ Basic SEO setup</li><li>✓ Contact forms</li></ul><a href="contact.html" class="btn">Choose this package</a></div>
-        <div class="package-card"><h3>STARTER OFFICE</h3><div class="price">$599</div><p style="opacity:0.6; font-size:0.9rem;">Setup + Monthly</p><ul><li>✓ Website + CMS</li><li>✓ SEO &amp; Social setup</li><li>✓ Monthly reporting</li></ul><a href="contact.html" class="btn">Choose this package</a></div>
-        <div class="package-card"><h3>GROWTH OFFICE</h3><div class="price">$999</div><p style="opacity:0.6; font-size:0.9rem;">Setup + Monthly</p><ul><li>✓ Full marketing suite</li><li>✓ Content &amp; ads management</li><li>✓ Dedicated account manager</li></ul><a href="contact.html" class="btn">Choose this package</a></div>
-        <div class="package-card"><h3>PRO OFFICE</h3><div class="price">$1,499</div><p style="opacity:0.6; font-size:0.9rem;">Setup + Monthly</p><ul><li>✓ Everything + strategy</li><li>✓ Dedicated team</li><li>✓ Priority support</li></ul><a href="contact.html" class="btn">Choose this package</a></div>
-      </div>
-      <p style="margin-top:1.5rem; opacity:0.6; font-size:0.9rem; text-align:center;">Custom packages available. Contact us for enterprise solutions.</p>
-    </div>
-  </section>
+<!-- ============================================================
+     MAIN PRICING CATALOG
+     ============================================================ -->
+<section class="pricing-section">
+  <div class="container">
+    <div class="section-label">PRICING CATALOG</div>
+    <h2>Full Service Price List</h2>
+    <p class="subtitle">
+      Currency: <strong>Lesotho Loti (M)</strong> &middot; Prices are starting prices; final quotation depends on scope.
+      Estimated completion in business days after receiving all required content/materials and payment/deposit.
+    </p>
 
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div><h4>SECOND OFFICE</h4><p style="opacity:0.7;">Your Digital Department</p></div>
-        <div><h4>Services</h4><ul><li>Web</li><li>Marketing</li><li>SEO</li><li>Creative</li></ul></div>
-        <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="portfolio.html">Work</a></li><li><a href="packages.html">Packages</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div><h4>Legal</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
-      </div>
-      <div class="footer-bottom">&copy; 2026 Second Office. All rights reserved.</div>
+    <!-- ============================================================
+         1. WEBSITE DESIGN & DEVELOPMENT
+         ============================================================ -->
+    <div class="category-title">
+      <i class="fas fa-globe"></i> Website Design &amp; Development (available)
     </div>
-  </footer>
 
-  <a href="https://wa.me/26612345678?text=Hello%20Second%20Office" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i><span>Chat</span></a>
+    <div class="table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Description</th>
+            <th>Starting Price</th>
+            <th>Est. Completion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="service-name">Basic Landing Page</td>
+            <td class="service-desc">One‑page business/personal website</td>
+            <td class="service-price">M 899.99</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Freelancer / Portfolio</td>
+            <td class="service-desc">Personal portfolio, CV, services, contact</td>
+            <td class="service-price">M 1,800</td>
+            <td class="service-delivery">4–6 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Small Business Website</td>
+            <td class="service-desc">3–5 pages, responsive design, contact form</td>
+            <td class="service-price">M 899.99</td>
+            <td class="service-delivery">5–8 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Professional Business Website</td>
+            <td class="service-desc">5–8 pages, modern UI, animations, forms</td>
+            <td class="service-price">M 3,699.99</td>
+            <td class="service-delivery">7–12 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Modern Premium Website</td>
+            <td class="service-desc">Custom UI/UX, advanced animations, interactions</td>
+            <td class="service-price">M 5,799.99</td>
+            <td class="service-delivery">10–18 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Corporate Website</td>
+            <td class="service-desc">Larger business website with advanced sections</td>
+            <td class="service-price">M 9,000</td>
+            <td class="service-delivery">14–25 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">E‑Commerce Website</td>
+            <td class="service-desc">Online store, products, cart, checkout</td>
+            <td class="service-price">M 10,000</td>
+            <td class="service-delivery">14–25 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Advanced Web Application</td>
+            <td class="service-desc">Custom functionality, dashboards, databases</td>
+            <td class="service-price">M 15,000</td>
+            <td class="service-delivery">20–40+ days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Website Add‑ons -->
+    <div class="category-title" style="font-size:1.1rem; margin-top:0.5rem;">
+      <i class="fas fa-plus-circle" style="font-size:1.2rem;"></i> Website Add‑ons
+    </div>
+
+    <div class="table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Est. Completion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="addon-row">
+            <td class="service-name">Additional website page</td>
+            <td class="service-price">M 400</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Contact form</td>
+            <td class="service-price">M 150</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">WhatsApp integration</td>
+            <td class="service-price">M 150</td>
+            <td class="service-delivery">Same day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Google Maps integration</td>
+            <td class="service-price">M 180</td>
+            <td class="service-delivery">Same day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Basic SEO setup</td>
+            <td class="service-price">M 380</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Google Analytics setup</td>
+            <td class="service-price">M 400</td>
+            <td class="service-delivery">Same day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Domain setup</td>
+            <td class="service-price">M 350</td>
+            <td class="service-delivery">Same day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Hosting setup</td>
+            <td class="service-price">M 500</td>
+            <td class="service-delivery">Same day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Website maintenance</td>
+            <td class="service-price">M 750 – 2,000 / month</td>
+            <td class="service-delivery">Ongoing</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Website redesign</td>
+            <td class="service-price">M 2,500</td>
+            <td class="service-delivery">4–10 days</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Website speed optimization</td>
+            <td class="service-price">M 1,300</td>
+            <td class="service-delivery">1–3 days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="table-note">* Domain and hosting fees are charged separately from your development fee.</p>
+
+    <!-- ============================================================
+         2. DIGITAL MARKETING
+         ============================================================ -->
+    <div class="category-title">
+      <i class="fas fa-bullhorn"></i> Digital Marketing (available)
+    </div>
+
+    <div class="table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Description</th>
+            <th>Starting Price</th>
+            <th>Est. Completion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="service-name">Digital Marketing Consultation</td>
+            <td class="service-desc">Marketing assessment + recommendations</td>
+            <td class="service-price">M 180</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr>
+            <td class="service-name">Digital Marketing Strategy</td>
+            <td class="service-desc">Custom strategy for the business</td>
+            <td class="service-price">M 900</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Marketing Audit</td>
+            <td class="service-desc">Review current online presence</td>
+            <td class="service-price">M 500</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">SEO Audit</td>
+            <td class="service-desc">Website/search visibility analysis</td>
+            <td class="service-price">M 120</td>
+            <td class="service-delivery">1–3 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Basic SEO Setup</td>
+            <td class="service-desc">Metadata, headings, indexing, keywords</td>
+            <td class="service-price">M 1,000</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Local SEO Setup</td>
+            <td class="service-desc">Local search + Google Business Profile</td>
+            <td class="service-price">M 690</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Google Business Profile Setup</td>
+            <td class="service-desc">Create/optimize profile</td>
+            <td class="service-price">M 580</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Keyword Research</td>
+            <td class="service-desc">Business keyword research</td>
+            <td class="service-price">M 400</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">SEO Content Optimization</td>
+            <td class="service-desc">Optimize existing website content</td>
+            <td class="service-price">M 1,000</td>
+            <td class="service-delivery">3–5 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Google Ads Setup</td>
+            <td class="service-desc">Campaign setup + targeting</td>
+            <td class="service-price">M 900</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Meta Ads Setup</td>
+            <td class="service-desc">Facebook/Instagram advertising setup</td>
+            <td class="service-price">M 1,300</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Advertising Campaign Management</td>
+            <td class="service-desc">Ongoing campaign management</td>
+            <td class="service-price">M 700+ / month</td>
+            <td class="service-delivery">Monthly</td>
+          </tr>
+          <tr>
+            <td class="service-name">Monthly Digital Marketing Management</td>
+            <td class="service-desc">Strategy + campaigns + reporting</td>
+            <td class="service-price">M 2,500 / month</td>
+            <td class="service-delivery">Monthly</td>
+          </tr>
+          <tr>
+            <td class="service-name">Analytics &amp; Reporting</td>
+            <td class="service-desc">Performance report + insights</td>
+            <td class="service-price">M 500 / month</td>
+            <td class="service-delivery">Monthly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="table-note">* Advertising budget is separate. For example: Second Office management fee + client's Facebook advertising budget.</p>
+
+    <!-- ============================================================
+         3. SOCIAL MEDIA MANAGEMENT
+         ============================================================ -->
+    <div class="category-title">
+      <i class="fas fa-share-alt"></i> Social Media Management (available)
+    </div>
+
+    <div style="font-size:0.9rem; font-weight:600; opacity:0.6; margin-top:0.2rem; margin-bottom:0.5rem;">
+      Social Media Setup
+    </div>
+
+    <div class="table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Est. Completion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="addon-row">
+            <td class="service-name">Instagram Business Setup</td>
+            <td class="service-price">M 250</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Facebook Business Page Setup</td>
+            <td class="service-price">M 250</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">TikTok Business Setup</td>
+            <td class="service-price">M 250</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">WhatsApp Business Setup</td>
+            <td class="service-price">M 100</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Social Media Profile Optimization</td>
+            <td class="service-price">M 300</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Social Media Bio + Branding Setup</td>
+            <td class="service-price">M 400</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="font-size:0.9rem; font-weight:600; opacity:0.6; margin-top:1.5rem; margin-bottom:0.5rem;">
+      Social Media Management
+    </div>
+
+    <div class="table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Starting Price</th>
+            <th>Delivery</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="service-name">Instagram Management</td>
+            <td class="service-price">M 350 / month</td>
+            <td class="service-delivery">Monthly</td>
+          </tr>
+          <tr>
+            <td class="service-name">Facebook Management</td>
+            <td class="service-price">M 350 / month</td>
+            <td class="service-delivery">Monthly</td>
+          </tr>
+          <tr>
+            <td class="service-name">TikTok Management</td>
+            <td class="service-price">M 350 / month</td>
+            <td class="service-delivery">Monthly</td>
+          </tr>
+          <tr>
+            <td class="service-name">Instagram + Facebook</td>
+            <td class="service-price">M 650 / month</td>
+            <td class="service-delivery">Monthly</td>
+          </tr>
+          <tr>
+            <td class="service-name">Instagram + Facebook + TikTok</td>
+            <td class="service-price">M 1,050 / month</td>
+            <td class="service-delivery">Monthly</td>
+          </tr>
+          <tr>
+            <td class="service-name">Full Social Media Management</td>
+            <td class="service-price">M 3,500 / month</td>
+            <td class="service-delivery">Monthly</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="font-size:0.9rem; font-weight:600; opacity:0.6; margin-top:1.5rem; margin-bottom:0.5rem;">
+      Individual Content
+    </div>
+
+    <div class="table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Price</th>
+            <th>Delivery</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="addon-row">
+            <td class="service-name">Static Social Media Post</td>
+            <td class="service-price">M 150</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Promotional Graphic</td>
+            <td class="service-price">M 200</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Carousel</td>
+            <td class="service-price">M 350</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Social Media Story</td>
+            <td class="service-price">M 90</td>
+            <td class="service-delivery">Same day – 1 day</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Short‑form video / Reel</td>
+            <td class="service-price">M 400</td>
+            <td class="service-delivery">1–3 days</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">TikTok / Reel editing</td>
+            <td class="service-price">M 400</td>
+            <td class="service-delivery">1–3 days</td>
+          </tr>
+          <tr class="addon-row">
+            <td class="service-name">Social Media Content Calendar</td>
+            <td class="service-price">M 600</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         4. BRAND VISUALS
+         ============================================================ -->
+    <div class="category-title">
+      <i class="fas fa-paint-brush"></i> Brand Visuals (Under progress)
+    </div>
+
+    <div class="table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Starting Price</th>
+            <th>Est. Completion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="service-name">Basic Logo</td>
+            <td class="service-price">M 400</td>
+            <td class="service-delivery">2–3 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Professional Logo</td>
+            <td class="service-price">M 650</td>
+            <td class="service-delivery">3–5 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Premium Custom Logo</td>
+            <td class="service-price">M 800</td>
+            <td class="service-delivery">5–7 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Logo Redesign</td>
+            <td class="service-price">M 350</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Business Card Design</td>
+            <td class="service-price">M 250</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr>
+            <td class="service-name">Letterhead Design</td>
+            <td class="service-price">M 300</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr>
+            <td class="service-name">Email Signature</td>
+            <td class="service-price">M 300</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr>
+            <td class="service-name">Social Media Profile Kit</td>
+            <td class="service-price">M 750</td>
+            <td class="service-delivery">2–3 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Social Media Brand Kit</td>
+            <td class="service-price">M 1,500</td>
+            <td class="service-delivery">3–5 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Brand Style Guide</td>
+            <td class="service-price">M 2,500+</td>
+            <td class="service-delivery">4–7 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Complete Brand Identity</td>
+            <td class="service-price">M 5,000</td>
+            <td class="service-delivery">7–14 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Flyer Design</td>
+            <td class="service-price">M 350 – 600</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Poster Design</td>
+            <td class="service-price">M 500 – 800</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Brochure Design</td>
+            <td class="service-price">M 750 – 1,500</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Menu Design</td>
+            <td class="service-price">M 500 – 1,000</td>
+            <td class="service-delivery">1–3 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Business Profile Design</td>
+            <td class="service-price">M 750 – 1,500</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         5. PRODUCT PHOTOGRAPHY
+         ============================================================ -->
+    <div class="category-title">
+      <i class="fas fa-camera"></i> Product Photography
+    </div>
+
+    <div class="table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Starting Price</th>
+            <th>Est. Completion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="service-name">Basic Product Shoot (single)</td>
+            <td class="service-price">M 80</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr>
+            <td class="service-name">5 Product Photos</td>
+            <td class="service-price">M 190</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">10 Product Photos</td>
+            <td class="service-price">M 250</td>
+            <td class="service-delivery">2–3 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">20 Product Photos</td>
+            <td class="service-price">M 350</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">30 Product Photos</td>
+            <td class="service-price">M 450</td>
+            <td class="service-delivery">3–5 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Premium Product Shoot</td>
+            <td class="service-price">M 500+</td>
+            <td class="service-delivery">3–6 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Product Retouching</td>
+            <td class="service-price">M 100 / photo</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Background Removal</td>
+            <td class="service-price">M 30 / photo</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr>
+            <td class="service-name">Lifestyle Product Photography</td>
+            <td class="service-price">M 900</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Product Photography + Short Video</td>
+            <td class="service-price">M 800</td>
+            <td class="service-delivery">3–5 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">On‑location Photography</td>
+            <td class="service-price">M 1,000</td>
+            <td class="service-delivery">1–3 days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="table-note">* For locations outside your normal operating area, transport/travel fee is quoted separately.</p>
+
+    <!-- ============================================================
+         6. CONTENT CREATIVE
+         ============================================================ -->
+    <div class="category-title">
+      <i class="fas fa-pen-fancy"></i> Content Creative (under progress)
+    </div>
+
+    <div class="table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Starting Price</th>
+            <th>Est. Completion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="service-name">Social Media Graphic</td>
+            <td class="service-price">M 150</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr>
+            <td class="service-name">Promotional Graphic</td>
+            <td class="service-price">M 250</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr>
+            <td class="service-name">Event Flyer</td>
+            <td class="service-price">M 350</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Promotional Poster</td>
+            <td class="service-price">M 500</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Carousel</td>
+            <td class="service-price">M 350</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Infographic</td>
+            <td class="service-price">M 500</td>
+            <td class="service-delivery">1–3 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Social Media Story Pack</td>
+            <td class="service-price">M 350</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Short Promotional Video</td>
+            <td class="service-price">M 750</td>
+            <td class="service-delivery">2–4 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Reel / TikTok Video</td>
+            <td class="service-price">M 500</td>
+            <td class="service-delivery">1–3 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Promotional Video</td>
+            <td class="service-price">M 1,500+</td>
+            <td class="service-delivery">3–7 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Video Editing</td>
+            <td class="service-price">M 500</td>
+            <td class="service-delivery">Depends on project</td>
+          </tr>
+          <tr>
+            <td class="service-name">YouTube Thumbnail</td>
+            <td class="service-price">M 200</td>
+            <td class="service-delivery">1 day</td>
+          </tr>
+          <tr>
+            <td class="service-name">YouTube Video Editing</td>
+            <td class="service-price">M 1,000+</td>
+            <td class="service-delivery">2–5 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Content Calendar</td>
+            <td class="service-price">M 750</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Copywriting</td>
+            <td class="service-price">M 250 / page</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+          <tr>
+            <td class="service-name">Social Media Caption Pack</td>
+            <td class="service-price">M 500</td>
+            <td class="service-delivery">1–2 days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============================================================
+         FINAL CTA – WHATSAPP
+         ============================================================ -->
+    <div class="packages-cta">
+      <h3>Need a custom quote or have questions?</h3>
+      <p>Contact us directly on WhatsApp and we'll help you choose the right package for your business.</p>
+      <div class="btn-group">
+        <a href="https://wa.me/26663086459?text=Hello%20Second%20Office%2C%20I%20need%20a%20custom%20quote%20for%20services" target="_blank" class="btn btn-whatsapp" style="font-size:1.05rem; padding:0.9rem 2.5rem;">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+        <a href="contact.html" class="btn btn-outline">Contact Form</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><h4>SECOND OFFICE</h4><p style="opacity:0.7;">Your Digital Department</p></div>
+      <div><h4>Services</h4><ul><li>Web</li><li>Marketing</li><li>SEO</li><li>Creative</li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="portfolio.html">Work</a></li><li><a href="packages.html">Packages</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><h4>Legal</h4><ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Second Office. All rights reserved.</div>
+  </div>
+</footer>
+
+<!-- ===== WHATSAPP FLOAT ===== -->
+<a href="https://wa.me/26663086459?text=Hello%20Second%20Office" target="_blank" class="whatsapp-float"><i class="fab fa-whatsapp"></i><span>Chat</span></a>
 
 <!-- ===== JAVASCRIPT ===== -->
 <script src="js/theme.js"></script>
 <script src="js/navigation.js"></script>
 <script src="js/animations.js"></script>
-<script src="js/forms.js"></script>
 <script src="js/analytics.js"></script>
 <script src="js/main.js"></script>
 </body>

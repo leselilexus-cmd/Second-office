@@ -23,6 +23,35 @@ gtag('event', 'whatsapp_click', {
 });
 </script>
 
+<style>/* Add only for the hero analytics image */
+.hero-analytics-image {
+    width: min(100%, 480px);
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 18px 35px rgba(7, 19, 38, 0.14));
+}
+
+.hero-visual {
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 800px) {
+    .hero-analytics-image {
+        width: min(100%, 380px);
+    }
+
+    .hero-visual {
+        min-height: 300px;
+    }
+}
+
+</style>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>Second Office — Your Digital Department</title>
@@ -78,6 +107,8 @@ gtag('event', 'whatsapp_click', {
     <div class="hero-content">
       <h1>YOUR BUSINESS DESERVES A DIGITAL DEPARTMENT.</h1>
       <p class="subhead">Websites. Marketing. SEO. Content. Technology. One team helping your business build, manage and grow online.</p>
+      
+
       <div class="hero-actions">
         <a href="contact.html" class="btn">Start a Project</a>
         <a href="#audit" class="btn btn-outline">Request a Digital Audit</a>
@@ -89,7 +120,10 @@ gtag('event', 'whatsapp_click', {
         <span>WEBSITE</span><span>MARKETING</span><span>SEO</span><span>SOCIAL</span><span>CREATIVE</span><span>TECHNOLOGY</span>
       </div>
     </div>
-    <!-- HERO VISUAL REMOVED — icon removed as requested -->
+    <!-- Replace only the existing hero-visual section -->
+        <div class="hero-visual">
+  <img src="assets/cartoon-analytics.jpg" alt="Digital Analytics Illustration" class="hero-analytics-image" loading="lazy" />
+</div>
   </div>
 </section>
 
@@ -152,12 +186,24 @@ gtag('event', 'whatsapp_click', {
     <div class="section-label">WHAT WE DO</div>
     <h2>Six digital departments, one team.</h2>
     <div class="card-grid">
-      <div class="card"><i class="fas fa-globe"></i><h3>Web</h3><p>Custom websites, e‑commerce, hosting &amp; maintenance.</p></div>
-      <div class="card"><i class="fas fa-chart-line"></i><h3>Growth</h3><p>SEO, local search, Google Business, on‑page strategy.</p></div>
-      <div class="card"><i class="fas fa-bullhorn"></i><h3>Marketing</h3><p>Campaigns, advertising, conversion optimization.</p></div>
-      <div class="card"><i class="fas fa-share-alt"></i><h3>Social</h3><p>Content, engagement, strategy &amp; management.</p></div>
-      <div class="card"><i class="fas fa-pen-fancy"></i><h3>Creative</h3><p>Branding, graphic design, campaign visuals.</p></div>
-      <div class="card"><i class="fas fa-camera"></i><h3>Media</h3><p>Product photography, video, promotional content.</p></div>
+      <div class="card">
+        <h3>Web</h3>
+        <p>Custom websites, e‑commerce, hosting &amp; maintenance.</p></div>
+      <div class="card">
+        <h3>Growth</h3>
+        <p>SEO, local search, Google Business, on‑page strategy.</p></div>
+      <div class="card">
+        <h3>Marketing</h3>
+        <p>Campaigns, advertising, conversion optimization.</p></div>
+      <div class="card">
+        <h3>Social</h3>
+        <p>Content, engagement, strategy &amp; management.</p></div>
+      <div class="card">
+        <h3>Creative (services are not available for now)</h3>
+        <p>Branding, graphic design, campaign visuals.</p></div>
+      <div class="card">
+        <h3>Media (services are not available for now)</h3>
+        <p>Product photography, video, promotional content.</p></div>
     </div>
   </div>
 </section>
@@ -177,6 +223,70 @@ gtag('event', 'whatsapp_click', {
     </div>
   </div>
 </section>
+<style>
+/* ===== SECOND OFFICE PROCESS SECTION ===== */
+
+/* WORK HOURS */
+#solutions {
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF 0%,
+            #EAF8FF 50%,
+            #38BDF8 100%
+        );
+    color: #071326;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease;
+}
+
+/* AFTER HOURS */
+body[data-theme="night"] #solutions {
+    background:
+        linear-gradient(
+            135deg,
+            #071326 0%,
+            #0A2540 55%,
+            #12658F 100%
+        );
+    color: #FFFFFF;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+/* Make timeline line respond to both modes */
+#solutions .timeline::before {
+    background: rgba(7, 19, 38, 0.18);
+    transition: background 0.35s ease;
+}
+
+body[data-theme="night"] #solutions .timeline::before {
+    background: rgba(56, 189, 248, 0.35);
+}
+
+/* Keep the step circles consistent with the Second Office identity */
+#solutions .timeline-item .step {
+    background: #38BDF8;
+    color: #071326;
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.25s ease;
+}
+
+#solutions .timeline-item .step:hover {
+    transform: translateY(-4px);
+}
+
+body[data-theme="night"] #solutions .timeline-item .step {
+    background: #38BDF8;
+    color: #071326;
+    box-shadow: 0 0 24px rgba(56, 189, 248, 0.28);
+}
+</style>
 
 <!-- ===== DIGITAL PRESENCE AUDIT ===== -->
 <section id="audit" class="audit-section">
@@ -384,36 +494,64 @@ gtag('event', 'whatsapp_click', {
   <div class="container">
     <div class="section-label">PRICING</div>
     <h2>Choose your package</h2>
-    <div class="package-grid">
+    <p style="max-width:600px; opacity:0.7; text-align:center; margin:0 auto;">Flexible options for businesses at every stage. All packages include setup and monthly support.</p>
+    <div class="package-grid" style="margin-top:2.5rem;">
+
+      <!-- STARTER LITE – Hooking -->
       <div class="package-card">
         <h3>STARTER LITE</h3>
-        <div class="price">$299</div>
-        <p style="opacity:0.6; font-size:0.9rem;">Setup + Monthly</p>
-        <ul><li>✓ Core website</li><li>✓ Basic SEO setup</li><li>✓ Contact forms</li></ul>
-        <a href="contact.html" class="btn">Choose this package</a>
+        <div class="price">M 899.99</div>
+        <p style="opacity:0.6; font-size:0.9rem;">Setup Fee</p>
+        <ul>
+          <li>✓ Professional Landing Page</li>
+          <li>✓ Contact Form + WhatsApp</li>
+          <li>✓ Basic SEO Setup</li>
+          <li>✓ Mobile Responsive</li>
+        </ul>
+        <a href="https://wa.me/26663086459?text=I'm%20interested%20in%20the%20STARTER%20LITE%20package" target="_blank" class="btn btn-whatsapp" style="width:100%; justify-content:center;">
+          <i class="fab fa-whatsapp"></i> Get Started on WhatsApp
+        </a>
       </div>
-      <div class="package-card">
-        <h3>STARTER OFFICE</h3>
-        <div class="price">$599</div>
-        <p style="opacity:0.6; font-size:0.9rem;">Setup + Monthly</p>
-        <ul><li>✓ Website + CMS</li><li>✓ SEO &amp; Social setup</li><li>✓ Monthly reporting</li></ul>
-        <a href="contact.html" class="btn">Choose this package</a>
-      </div>
-      <div class="package-card">
+
+      <!-- GROWTH OFFICE – Most popular / hooking -->
+      <div class="package-card featured">
+        <div class="badge">MOST POPULAR</div>
         <h3>GROWTH OFFICE</h3>
-        <div class="price">$999</div>
-        <p style="opacity:0.6; font-size:0.9rem;">Setup + Monthly</p>
-        <ul><li>✓ Full marketing suite</li><li>✓ Content &amp; ads management</li><li>✓ Dedicated account manager</li></ul>
-        <a href="contact.html" class="btn">Choose this package</a>
+        <div class="price">M 3,699.99</div>
+        <p style="opacity:0.6; font-size:0.9rem;">Setup Fee</p>
+        <ul>
+          <li>✓ Professional Business Website</li>
+          <li>✓ 5–8 Pages + Animations</li>
+          <li>✓ Full SEO + Analytics Setup</li>
+          <li>✓ Social Media Profile Kit</li>
+          <li>✓ Google Maps Integration</li>
+        </ul>
+        <a href="https://wa.me/26663086459?text=I'm%20interested%20in%20the%20GROWTH%20OFFICE%20package" target="_blank" class="btn btn-whatsapp" style="width:100%; justify-content:center;">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
       </div>
+
+      <!-- PRO OFFICE – Premium hook -->
       <div class="package-card">
         <h3>PRO OFFICE</h3>
-        <div class="price">$1,499</div>
-        <p style="opacity:0.6; font-size:0.9rem;">Setup + Monthly</p>
-        <ul><li>✓ Everything + strategy</li><li>✓ Dedicated team</li><li>✓ Priority support</li></ul>
-        <a href="contact.html" class="btn">Choose this package</a>
+        <div class="price">M 5,799.99</div>
+        <p style="opacity:0.6; font-size:0.9rem;">Setup Fee</p>
+        <ul>
+          <li>✓ Premium Custom Website</li>
+          <li>✓ Custom UI/UX + Animations</li>
+          <li>✓ Complete SEO + Ads Setup</li>
+          <li>✓ Social Media Brand Kit</li>
+          <li>✓ Monthly Performance Reports</li>
+        </ul>
+        <a href="https://wa.me/26663086459?text=I'm%20interested%20in%20the%20PRO%20OFFICE%20package" target="_blank" class="btn btn-whatsapp" style="width:100%; justify-content:center;">
+          <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        </a>
       </div>
+
     </div>
+    <p style="margin-top:1.5rem; opacity:0.6; font-size:0.9rem; text-align:center;">
+      <a href="packages.html" style="color:var(--sky); font-weight:500;">View all packages →</a>
+    </p>
   </div>
 </section>
 
@@ -440,14 +578,181 @@ gtag('event', 'whatsapp_click', {
       <div class="btn-group">
         <a href="#audit" class="btn">REQUEST AN AUDIT</a>
         <a href="contact.html" class="btn btn-outline">START A PROJECT</a>
-        <a href="https://wa.me/26612345678?text=Hello%20Second%20Office%2C%20I%20found%20your%20website%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="btn btn-whatsapp">
+        <a href="https://wa.me/26663086459?text=Hello%20Second%20Office%2C%20I%20found%20your%20website%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" class="btn btn-whatsapp">
           <i class="fab fa-whatsapp"></i> CHAT ON WHATSAPP
         </a>
       </div>
-      <p style="margin-top: 1.5rem; font-size: 0.9rem;"><i class="fas fa-phone"></i> +266 1234 5678 · <i class="fas fa-envelope"></i> hello@secondoffice.co.ls</p>
+      <p style="margin-top: 1.5rem; font-size: 0.9rem;"><i class="fas fa-phone"></i> +266 5605 8081 · <i class="fas fa-envelope"></i> secondoffice@gmail.com</p>
     </div>
   </div>
 </section>
+
+<style>
+  /* /* =========================================================
+   SECOND OFFICE — FINAL CTA / CONTACT SECTION
+   Scoped ONLY to #contact so it does not affect
+   buttons, badges, cards, or layouts elsewhere.
+   ========================================================= */
+
+#contact {
+    padding: 5rem 0;
+    background: #f8fbff;
+    transition: background 0.35s ease;
+}
+
+#contact .container {
+    width: 100%;
+}
+
+#contact .audit-box {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 3rem;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(234, 248, 255, 0.96)
+        );
+
+    border: 1px solid rgba(56, 189, 248, 0.28);
+    border-radius: 32px;
+
+    box-shadow:
+        0 20px 60px rgba(7, 19, 38, 0.08),
+        0 0 35px rgba(56, 189, 248, 0.08);
+
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.3s ease;
+}
+
+#contact .audit-box:hover {
+    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow:
+        0 28px 70px rgba(7, 19, 38, 0.11),
+        0 0 45px rgba(56, 189, 248, 0.12);
+}
+
+/* Heading */
+#contact .audit-box h2 {
+    max-width: 850px;
+    margin: 0 auto 1rem;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.08;
+}
+
+/* Description */
+#contact .audit-box > p {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.75;
+    font-size: 1.05rem;
+}
+
+/* Buttons — scoped so they cannot compress other sections */
+#contact .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+#contact .btn-group .btn {
+    flex: 0 0 auto;
+    min-width: 190px;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.5rem;
+}
+
+/* Contact details */
+#contact .audit-box > p:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem 1rem;
+    margin-top: 1.75rem !important;
+    opacity: 0.75;
+}
+
+#contact .audit-box > p:last-child i {
+    color: #38BDF8;
+}
+
+/* =========================
+   AFTER HOURS
+   ========================= */
+
+body[data-theme="night"] #contact {
+    background: #071326;
+}
+
+body[data-theme="night"] #contact .audit-box {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10, 37, 64, 0.92),
+            rgba(7, 19, 38, 0.98)
+        );
+
+    border-color: rgba(56, 189, 248, 0.28);
+
+    box-shadow:
+        0 24px 70px rgba(0, 0, 0, 0.32),
+        0 0 45px rgba(56, 189, 248, 0.08);
+}
+
+body[data-theme="night"] #contact .audit-box:hover {
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.42),
+        0 0 55px rgba(56, 189, 248, 0.14);
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 700px) {
+    #contact {
+        padding: 3rem 0;
+    }
+
+    #contact .audit-box {
+        padding: 3rem 1.25rem;
+        border-radius: 24px;
+    }
+
+    #contact .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #contact .btn-group .btn {
+        width: 100%;
+        min-width: 0;
+    }
+
+    #contact .audit-box > p:last-child {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+} */
+</style>
 
 <!-- ===== FOOTER ===== -->
 <footer>

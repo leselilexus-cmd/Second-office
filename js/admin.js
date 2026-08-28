@@ -307,20 +307,24 @@
   // =========================================================
 
   async function loadDashboard() {
-    const [leads, inquiries, audits, reviews, projects] = await Promise.all([
+    const [clients, leads, inquiries, audits, reviews, projects, testimonials] = await Promise.all([
+      fetchData('clients'),
       fetchData('leads'),
       fetchData('inquiries'),
       fetchData('audits'),
       fetchData('reviews'),
-      fetchData('projects')
+      fetchData('projects'),
+      fetchData('testimonials')
     ]);
 
+    setStat('statClients', getCount(clients));
     setStat('statLeads', getCount(leads));
     setStat('statInquiries', getCount(inquiries));
     setStat('statAudits', getCount(audits));
     setStat('statReviews', getCount(reviews));
     setStat('statFeedback', getCount(reviews)); // compatibility
     setStat('statProjects', getCount(projects));
+    setStat('statTestimonials', getCount(testimonials));
 
     // Recent activity
     const activityDiv = document.getElementById('recentActivity');
@@ -328,6 +332,12 @@
 
     const all = [];
 
+    if (Array.isArray(clients)) {
+      clients.forEach(c => all.push({
+        text: `New client: ${escapeHTML(c.clients_name || 'Unknown')}`,
+        date: c.created_at
+      }));
+    }
     if (Array.isArray(leads)) {
       leads.forEach(l => all.push({
         text: `New lead: ${escapeHTML(l.business_name || 'Unknown')}`,
@@ -350,6 +360,12 @@
       reviews.forEach(f => all.push({
         text: `Feedback received from ${escapeHTML(f.client_name || 'Client')}`,
         date: f.created_at
+      }));
+    }
+    if (Array.isArray(testimonials)) {
+      testimonials.forEach(t => all.push({
+        text: `New testimonial: ${escapeHTML(t.client_name || 'Unknown')}`,
+        date: t.created_at
       }));
     }
 
@@ -379,6 +395,29 @@
 
     case 'dashboard':
       loadDashboard();
+      break;
+
+    case 'clients':
+      fetchData('clients').then(data => {
+        const tbody = document.querySelector('#clientsTable tbody');
+        if (!tbody) return;
+
+        if (Array.isArray(data) && data.length > 0) {
+          tbody.innerHTML = data.map(l => `
+            <tr data-status="${escapeHTML(l.status || 'new')}">
+              <td>${escapeHTML(l.business_name || '')}</td>
+              <td>${escapeHTML(l.contact_name || '')}</td>
+              <td>${escapeHTML(l.email || '')}</td>
+              <td><span style="background:var(--sky);color:#071326;padding:2px 10px;border-radius:20px;font-size:0.75rem;font-weight:600;">${escapeHTML(l.status || 'new')}</span></td>
+              <td>${formatDate(l.created_at)}</td>
+            </tr>
+          `).join('');
+        } else {
+          tbody.innerHTML = `<tr><td colspan="5" class="empty-state">No clients yet. When new clients are added, they will appear here.</td></tr>`;
+        }
+
+        setupFilterAndSearch('clientsTable', 'searchClients', 'filterStatus', document.querySelectorAll('.filter-btn'));
+      });
       break;
 
     case 'leads':
@@ -462,60 +501,6 @@
           `).join('');
         } else {
           container.innerHTML = `<p class="empty-state">No projects yet. When you add real client projects or concept projects, they will appear here. Remember to label concept projects clearly.</p>`;
-        }
-      });
-      break;
-
-    case 'clients':
-      Promise.all([fetchData('leads'), fetchData('projects')]).then(([leads, projects]) => {
-        const tbody = document.querySelector('#clientsTable tbody');
-        if (!tbody) return;
-
-        const clientMap = new Map();
-
-        if (Array.isArray(leads)) {
-          leads.forEach(l => {
-            if (l.business_name && !clientMap.has(l.business_name)) {
-              clientMap.set(l.business_name, {
-                business: l.business_name,
-                contact: l.contact_name || '',
-                email: l.email || '',
-                projects: 0
-              });
-            }
-          });
-        }
-
-        if (Array.isArray(projects)) {
-          projects.forEach(p => {
-            if (!p.client_name) return;
-            if (!clientMap.has(p.client_name)) {
-              clientMap.set(p.client_name, {
-                business: p.client_name,
-                contact: '',
-                email: '',
-                projects: 1
-              });
-            } else {
-              const existing = clientMap.get(p.client_name);
-              existing.projects += 1;
-            }
-          });
-        }
-
-        const clients = Array.from(clientMap.values());
-
-        if (clients.length > 0) {
-          tbody.innerHTML = clients.map(c => `
-            <tr>
-              <td>${escapeHTML(c.business)}</td>
-              <td>${escapeHTML(c.contact)}</td>
-              <td>${escapeHTML(c.email)}</td>
-              <td>${c.projects}</td>
-            </tr>
-          `).join('');
-        } else {
-          tbody.innerHTML = `<tr><td colspan="4" class="empty-state">No clients yet. When you convert leads into projects, they will appear here.</td></tr>`;
         }
       });
       break;

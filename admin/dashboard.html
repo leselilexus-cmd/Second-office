@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-07WG5HYLSV"></script>
 <script>
@@ -10,6 +11,7 @@
 
   gtag('config', 'G-07WG5HYLSV');
 </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard — Second Office</title>
@@ -53,7 +55,16 @@
     <main class="admin-main">
       <header>
         <h1>Dashboard</h1>
-        <span id="adminUser">Admin</span>
+        <span id="adminUser">Second Office Admin</span>
+        <!--40. ADMIN DASHBOARD OVERVIEW
+When you log in:
+SECOND OFFICE ADMIN
+
+make the greetings to pop on screen then i have to say a save word until then it doent show anything it like a card on screen and it blocked the reviwes to be seen and the background behind the card is way blurry that you can only see color but not the text 
+the editing also has to be like an ai calling or greeting me make a text to speech voice automatically that when i enter in there it says the full greeting the after i entered a save word it has to say Thank you if not it just doesnt say anything i dont know if that is possible
+"Good morning, Leseli."
+
+-->
       </header>
 
       <!-- FILTER BAR -->
@@ -78,21 +89,29 @@
       </div>
     </div>
 
-
       <!-- Stats cards – initially zero -->
       <div class="stats-grid">
+        <div class="stat-card"><h3>Clients</h3><p id="statClients">0</p></div>
         <div class="stat-card"><h3>Leads</h3><p id="statLeads">0</p></div>
         <div class="stat-card"><h3>Inquiries</h3><p id="statInquiries">0</p></div>
         <div class="stat-card"><h3>Audits</h3><p id="statAudits">0</p></div>
         <div class="stat-card"><h3>Feedback</h3><p id="statFeedback">0</p></div>
         <div class="stat-card"><h3>Projects</h3><p id="statProjects">0</p></div>
+        <div class="stat-card"><h3>Testimonials</h3><p id="statTestimonials">0</p></div>
+      </div>
+
+      <!-- Clients list – empty state -->
+      <div class="admin-card">
+        <h2>Recent Clients</h2>
+      <div id="clientsList">
+        <p class="empty-state">No clients yet. As you receive inquiries, audit requests, feedback, and others clients will appear here.</p>
       </div>
 
       <!-- Recent activity – empty state -->
       <div class="admin-card">
         <h2>Recent Activity</h2>
         <div id="recentActivity">
-          <p class="empty-state">No activity yet. As you receive inquiries, audit requests, and feedback, they will appear here.</p>
+          <p class="empty-state">No activity yet. As you receive inquiries, audit requests, feedback, and others they will appear here.</p>
         </div>
       </div>
     </main> 
@@ -104,5 +123,7 @@
 <script src="../js/forms.js"></script>
 <script src="../js/analytics.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/dashboard.js"></script>
+
 </body>
 </html>

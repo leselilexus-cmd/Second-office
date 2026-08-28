@@ -4,14 +4,26 @@
 
 /* ----- Hero ----- */
 .hero {
-  padding: 5rem 0 6rem;
-  background: var(--bg);
-  transition: background 0.4s;
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    padding: 4rem 0 5rem;
+
+    background-image:
+        linear-gradient(
+            10deg,
+            rgba(255, 255, 255, 0.97) 0%,
+            rgba(255, 255, 255, 0.90) 45%,
+            rgba(255, 255, 255, 0.55) 100%
+        ),
+        url("../assets/background-section.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+    transition: background 0.35s ease;
 }
 .hero::before {
-  content: '';
   position: absolute;
   top: -30%;
   right: -20%;
